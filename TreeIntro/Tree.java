@@ -19,17 +19,15 @@ public class Tree
       */
       public int size()
       {
-          int sum = 0;
-          for (Node child: children)
-            {
-                sum = sum + child.size();
-            }
-          
-          return 1 + sum;
-
-      }
-   }
-
+           int sum = 0;
+           for( Node child: children)
+           {
+               sum = sum + child.size();
+           }
+           
+           return 1 + sum;
+        }
+    }
    /**
       Constructs an empty tree.
    */
@@ -47,16 +45,14 @@ public class Tree
        root = new Node();
        root.data = rootData;
        root.children = new ArrayList<>();
-
    }
 
    /**
       Adds a subtree as the last child of the root.
    */
-   public void addSubtree(Tree subtree)
+   public void addSubtree(Tree subtree) //root is a node
    {
-       root.children.add(subtree.root);//root is a Node
-
+       root.children.add(subtree.root);
    }
 
    /**
@@ -66,11 +62,11 @@ public class Tree
    public int size()
    {
        if (root == null)
-        {return 0;}
+        return 0;
        else
-        {return root.size();}
-
+        return root.size();
    }
 
    // Additional methods will be added in later sections.
+   
 }

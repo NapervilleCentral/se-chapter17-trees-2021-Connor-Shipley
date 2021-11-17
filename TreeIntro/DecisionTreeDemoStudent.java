@@ -9,18 +9,21 @@ public class DecisionTreeDemoStudent
    public static void main(String[] args)
    {
       BinaryTree questionTree = new BinaryTree("Is it a mamal?",
-          new BinaryTree("Does it have stripes?",
-          
-              new BinaryTree("is it a carnivore?",
-                  new BinaryTree("It is a tiger."),
-                  new BinaryTree("It is a zebra.")),
-              new BinaryTree("It is a pig")),
-   
-          new BinaryTree("Does it fly?",
-              new BinaryTree("It is an eagle."),
-              new BinaryTree("Does it Swim",
-                  new BinaryTree("It is a penguin."),
-                  new BinaryTree("It is a ostrich"))));
+         new BinaryTree("Does it have stripes?",
+         
+                new BinaryTree("Is it a carnivore?",
+                     new BinaryTree("It is a tiger."),
+                     new BinaryTree("It is a zebra.")),
+                new BinaryTree("It is a pig.")),
+                     
+             new BinaryTree("Does it fly?",
+                new BinaryTree("It is an eagle."),
+                new BinaryTree("Does it swim?",
+                    new BinaryTree("It is a penguin."),
+                    new BinaryTree("It is an ostritch."))));
+         
+         
+       
 
 
 
@@ -28,9 +31,8 @@ public class DecisionTreeDemoStudent
       Scanner in = new Scanner(System.in);
       while (!done)
       {
-          BinaryTree left = questionTree.left();
-          BinaryTree right = questionTree.right();
-
+         BinaryTree left = questionTree.left();
+         BinaryTree right = questionTree.right();
          if (left.isEmpty() && right.isEmpty())
          {
             System.out.println(questionTree.data());
@@ -41,9 +43,8 @@ public class DecisionTreeDemoStudent
             String response;
             do
             {
-                System.out.print(questionTree.data() + " Y/N ");
-                response = in.next().toUpperCase();
-
+                System.out.print(questionTree.data() + "Y/N");
+                response = in.next();
             }
             while (!response.equals("Y") && !response.equals("N"));
 

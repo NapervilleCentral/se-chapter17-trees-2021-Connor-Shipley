@@ -34,7 +34,6 @@ public class BinaryTree
        root.data = rootData;
        root.left = left.root;
        root.right = right.root;
-
    }
 
    class Node
@@ -51,9 +50,11 @@ public class BinaryTree
    */
    private static int height(Node n)
    {
-       if ( n ==  null) {return 0;}
-       else { return 1 + Math.max(height(n.left), height(n.right));  }
-
+       if (n == null) {return 0;}
+       else
+       {
+           return 1 + Math.max(height(n.left), height(n.right));
+       }
    }
 
    /**
@@ -83,7 +84,6 @@ public class BinaryTree
        BinaryTree result = new BinaryTree();
        result.root = root.left;
        return result;
-
    }
 
    /**
@@ -95,6 +95,6 @@ public class BinaryTree
        BinaryTree result = new BinaryTree();
        result.root = root.right;
        return result;
-
    }
+   
 }

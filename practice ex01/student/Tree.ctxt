@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Tree
-comment0.text=\r\n\ \ \ A\ tree\ in\ which\ each\ node\ has\ an\ arbitrary\ number\ of\ children.\r\n
+comment0.text=\r\n\ \ \ A\ tree\ in\ which\ each\ node\ has\ an\ arbitrary\ number\ of\ children.\r\n\ \ \ Modify\ the\ Tree\ class\ from\ Section\ 16.1\ (below)\ to\ add\r\n\ \ \ a\ method\ that\ counts\ the\ number\ of\ leaves\ in\ the\ tree.\r\n
 comment1.params=
 comment1.target=Tree()
 comment1.text=\r\n\ \ \ \ \ \ Constructs\ an\ empty\ tree.\r\n
@@ -13,4 +13,6 @@ comment3.text=\r\n\ \ \ \ \ \ Adds\ a\ subtree\ as\ the\ last\ child\ of\ the\ r
 comment4.params=
 comment4.target=int\ size()
 comment4.text=\r\n\ \ \ \ \ \ Computes\ the\ size\ of\ this\ tree.\r\n\ \ \ \ \ \ @return\ the\ number\ of\ nodes\ in\ the\ tree\r\n
-numComments=5
+comment5.params=
+comment5.target=int\ leafCount()
+numComments=6
