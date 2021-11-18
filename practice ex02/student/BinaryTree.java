@@ -53,10 +53,22 @@ public class BinaryTree
       {
          int count = 0;
 
+         if (right != null && left != null)
+         {
+            return left.countNodesWithOneChild() + right.countNodesWithOneChild();
+         }
+         else if (right != null)
+         {
+             return 1 + right.countNodesWithOneChild();
+         }
+         else if (left != null)
+         {
+             return 1 + left.countNodesWithOneChild();
+         }
+         else
+            return 0;
+            
 
-
-
-         return count;
       }
    }
 
@@ -66,7 +78,9 @@ public class BinaryTree
    */
    public int countNodesWithOneChild()
    {
-      return 0;
+      if (root == null) {return 0;}
+      else
+        return root.countNodesWithOneChild();
    }
 
    /**
