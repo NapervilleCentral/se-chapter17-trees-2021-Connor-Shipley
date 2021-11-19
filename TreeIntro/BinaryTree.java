@@ -36,11 +36,54 @@ public class BinaryTree
        root.right = right.root;
    }
 
+   /**
+    * Inserts a new node into the tree.
+    * @param obj the object to insert
+    */
+   public void add(Comparable obj)
+   {
+       Node newNode = new Node();
+       newNode.data = obj;
+       newNode.left = null;
+       newNode.right = null;
+       
+       if(root == null) {root = newNode;}
+       else
+        root.addNode(newNode);
+   }
+   
    class Node
    {
-      public Object data;
+      //public Object data;
+      public Comparable data;
       public Node left;
       public Node right;
+      
+      /**
+       * Inserts a new node as a decendent of this node.
+       * @param new Node - the node to insert
+       */
+      public void addNode(Node newNode)
+      {
+          if(newNode.data.compareTo(this.data)<0)
+          {
+              
+              if (left == null)
+                left = newNode;
+              else
+                left.addNode(newNode);
+                
+          }
+          else
+          {
+              
+              if (right == null)
+                right = newNode;
+              else
+                right.addNode(newNode);
+                
+          }
+      }
    }
 
    /**

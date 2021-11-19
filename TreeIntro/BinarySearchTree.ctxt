@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=BinarySearchTree
+comment0.text=\r\n\ \ \ This\ class\ implements\ a\ binary\ search\ tree\ whose\r\n\ \ \ nodes\ hold\ objects\ that\ implement\ the\ Comparable\r\n\ \ \ interface.\r\n
+comment1.params=
+comment1.target=BinarySearchTree()
+comment1.text=\r\n\ \ \ \ \ \ Constructs\ an\ empty\ tree.\r\n
+comment2.params=obj
+comment2.target=void\ add(java.lang.Comparable)
+comment2.text=\r\n\ \ \ \ \ \ Inserts\ a\ new\ node\ into\ the\ tree.\r\n\ \ \ \ \ \ @param\ obj\ the\ object\ to\ insert\r\n
+comment3.params=
+comment3.target=void\ print()
+comment3.text=\r\n\ \ \ \ \ \ Prints\ the\ contents\ of\ the\ tree\ in\ sorted\ order.\r\n
+comment4.params=parent
+comment4.target=void\ print(BinarySearchTree.Node)
+comment4.text=\r\n\ \ \ \ \ \ Prints\ a\ node\ and\ all\ of\ its\ descendants\ in\ sorted\ order.\r\n\ \ \ \ \ \ @param\ parent\ the\ root\ of\ the\ subtree\ to\ print\r\n
+numComments=5
