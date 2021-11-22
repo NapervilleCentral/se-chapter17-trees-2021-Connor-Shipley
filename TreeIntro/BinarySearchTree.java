@@ -29,8 +29,97 @@ public class BinarySearchTree
       else { root.addNode(newNode); }
    }
 
+   /**
+    * Tries to find an object in the tree.
+    * @param obj the object to find
+    * @return true if the object is in the tree
+    */
+   public boolean find(Comparable obj)
+   {
+       Node current = root;
+       while(current != null)
+       {
+           int d = current.data.compareTo(obj);
+           if(d == 0)
+                return true;
+           else if (d > 0)
+                current = current = current.left;
+           else 
+                current = current.right;
+       }
+       
+       return false;
+       
+   }
 
-
+   /**
+    * Removes an object from the tree. Does nothing if the object is not contained in the tree.
+    * @param obj the object to remove
+    */
+   public void remove(Comparable obj)
+   {
+       //Find node to be removed
+       Node toBeRemoved = root;
+       Node parent = null;
+       boolean found = false;
+       while (!found && toBeRemoved != null)
+       {
+           int d = toBeRemoved.data.compareTo(obj);
+           if ( d == 0)
+                found = true;
+           else 
+           {
+               parent = toBeRemoved;
+               if ( d > 0)
+                    toBeRemoved = toBeRemoved.left;
+               else 
+                    toBeRemoved = toBeRemoved.right;
+           }
+        } 
+           if (!found) return;
+           
+           //toBeRemoved contains obj
+           
+           //if one of the children is empty, use the other
+           
+           if(toBeRemoved.left == null || toBeRemoved.right == null)
+           {
+                Node newChild = null;
+                if (toBeRemoved.left == null)
+                    newChild = toBeRemoved.right;
+                else if (toBeRemoved.right == null)
+                    newChild = toBeRemoved.left;
+                
+                if (parent == null) //found in root
+                    root = newChild;
+                else if(parent.left == toBeRemoved)
+                    parent.left = newChild;
+                else if(parent.right == toBeRemoved)
+                    parent.right = newChild;
+                    
+                return;
+           }
+           
+           //Neither subtree is empty
+           
+           //Find smallest element of the right subtree
+           Node smallestParent = toBeRemoved;
+           Node smallestNode = toBeRemoved.right;
+           
+           while(smallestNode.left != null)
+           {
+               smallestParent = smallestNode;
+               smallestNode = smallestNode.left;
+           }
+           
+           //smallestNode contains smallest child in right subtree
+           //Move contents, unlink the child
+           
+           toBeRemoved.data = smallestNode.data;
+           smallestParent.left = smallestNode.right;
+           
+       
+   }
 
    /**
       Prints the contents of the tree in sorted order.
