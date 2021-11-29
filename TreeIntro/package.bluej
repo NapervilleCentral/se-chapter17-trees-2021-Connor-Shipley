@@ -2,11 +2,11 @@
 dependency1.from=TreeDemo
 dependency1.to=Tree
 dependency1.type=UsesDependency
-dependency2.from=DecisionTreeDemoStudent
-dependency2.to=BinaryTree
+dependency2.from=TreeTester
+dependency2.to=BinarySearchTree
 dependency2.type=UsesDependency
-dependency3.from=TreeTester
-dependency3.to=BinarySearchTree
+dependency3.from=DecisionTreeDemoStudent
+dependency3.to=BinaryTree
 dependency3.type=UsesDependency
 editor.fx.0.height=739
 editor.fx.0.width=1230

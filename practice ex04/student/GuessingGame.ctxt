@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=GuessingGame
+comment0.text=\r\n\ \ \ Below\ is\ a\ renamed\ and\ modified\ version\ of\ the\ DecisionTreeDemo\r\n\ \ \ program\ from\ Section\ 17.2.\ Implement\ the\ animal\ guessing\ game\ described\r\n\ \ \ in\ Section\ 17.2.1.\ Start\ with\ the\ tree\ in\ Figure\ 4,\ but\ present\r\n\ \ \ the\ leaves\ as\ "Is\ it\ a(n)\ X?"\ If\ it\ wasn't,\ ask\ the\ user\ what\ the\r\n\ \ \ animal\ was,\ and\ ask\ for\ a\ question\ that\ is\ true\ for\ that\ animal\r\n\ \ \ but\ false\ for\ X.\ For\ example\:\r\n\r\n\ \ \ \ \ \ Is\ it\ a\ mammal?\ Y\r\n\ \ \ \ \ \ Does\ it\ have\ stripes?\ N\r\n\ \ \ \ \ \ Is\ it\ a\ pig?\ N\r\n\ \ \ \ \ \ I\ give\ up.\ What\ is\ it?\ A\ hamster\r\n\ \ \ \ \ \ Please\ give\ me\ a\ question\ that\ is\ true\ for\ a\ hamster\ and\ false\ for\ a\ pig.\r\n\ \ \ \ \ \ Is\ it\ small\ and\ cuddly?\r\n\r\n\ \ \ In\ this\ way,\ the\ program\ learns\ additional\ facts.\r\n\ \ \ Use\ the\ BinaryTree\ class\ from\ Section\ 17.2.\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2

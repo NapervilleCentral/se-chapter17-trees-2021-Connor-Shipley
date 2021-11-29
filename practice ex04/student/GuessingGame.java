@@ -34,43 +34,65 @@ public class GuessingGame
                new BinaryTree("Is it an ostrich?"))));
 
       BinaryTree current = questionTree;
-
-      boolean done = false;
-      String response;
-      Scanner in = new Scanner(System.in);
-      System.out.println("Let's play a guessing game.");
-
-      while (!done)
-      {
-         BinaryTree left = current.left();
-         BinaryTree right = current.right();
-         if (left.isEmpty() && right.isEmpty())
-         {
-            System.out.println(current.data());
-            done = true;
-         }
-         else
-         {
-            do
-            {
-               System.out.print(current.data() + " (Y/N) ");
-               response = in.nextLine().toUpperCase();
-            }
-            while (!response.equals("Y") && !response.equals("N"));
-
-            if (response.equals("Y"))
-            {
-               current = left;
-            }
-            else
-            {
-               current = right;
-            }
-         }
-      }
-
-      String message = "Great, " + current.data();
-      System.out.println(message.replace("Is it", "it is")
-         .replace("?", "."));
-   }
+      while (true) {
+          boolean done = false;
+          String response;
+          Scanner in = new Scanner(System.in);
+          System.out.println("Let's play a guessing game.");
+    
+          while (!done)
+          {
+             BinaryTree left = current.left();
+             BinaryTree right = current.right();
+             if (left.isEmpty() && right.isEmpty())
+             {
+                System.out.println(current.data());
+                done = true;
+             }
+             else
+             {
+                do
+                {
+                   System.out.print(current.data() + " (Y/N) ");
+                   response = in.nextLine().toUpperCase();
+                }
+                while (!response.equals("Y") && !response.equals("N"));
+    
+                if (response.equals("Y"))
+                {
+                   current = left;
+                }
+                else
+                {
+                   current = right;
+                }
+             }
+          }
+          
+          String message = "Great, " + current.data();
+          System.out.println(message.replace("Is it", "it is")
+             .replace("?", "."));
+          
+          System.out.println("Was this correct?");
+          response = in.nextLine().toUpperCase();
+          if (response.equals("N"))
+          {
+              System.out.println("What is a question that would have an answer of your animal?");
+              BinaryTree newNode = new BinaryTree(in.nextLine());
+              System.out.println("Is the answer to this question Y or N?");
+              boolean left = in.nextLine().toUpperCase().equals("Y");
+              System.out.println("What animal were you thinking of?");
+              if (left)
+              {
+                  newNode.addLeft(new BinaryTree(in.nextLine()));
+                  newNode.addRight(new BinaryTree(current.data()));     
+              } else {
+                 newNode.addRight(new BinaryTree(in.nextLine()));
+                 newNode.addLeft(new BinaryTree(current.data()));    
+               }
+              
+              current = newNode;
+          }
+       }
+    }
 }

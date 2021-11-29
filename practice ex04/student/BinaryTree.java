@@ -94,4 +94,18 @@ public class BinaryTree
       result.root = root.right;
       return result;
    }
+   
+   public void addLeft(BinaryTree newTree)
+   {
+       this.root.left = newTree.root;
+   }
+   
+   public void addRight(BinaryTree newTree)
+   {
+       this.root.right = newTree.root;
+   }
+   
+   public void replace(BinaryTree newTree) {
+     this.root = newTree.root;  
+   }
 }
