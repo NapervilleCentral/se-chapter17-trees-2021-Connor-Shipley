@@ -4,7 +4,7 @@
 */
 public class BinaryTree
 {
-   private Node root;
+   public Node root;
 
    /**
       Constructs an empty tree.
@@ -72,6 +72,11 @@ public class BinaryTree
       @return the root data
    */
    public Object data() { return root.data; }
+   
+   public Node getRoot()
+   {
+       return root;
+   }
 
    /**
       Gets the left subtree of this tree.

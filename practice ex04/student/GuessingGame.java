@@ -34,7 +34,8 @@ public class GuessingGame
                new BinaryTree("Is it an ostrich?"))));
 
       BinaryTree current = questionTree;
-      while (true) {
+      String foundAnimal = "N";
+      while (!foundAnimal.equals("Y")) {
           boolean done = false;
           String response;
           Scanner in = new Scanner(System.in);
@@ -91,8 +92,10 @@ public class GuessingGame
                  newNode.addLeft(new BinaryTree(current.data()));    
                }
               
-              current = newNode;
+              current = getRoot();
           }
+          else
+            foundAnimal = "Y";
        }
     }
 }
