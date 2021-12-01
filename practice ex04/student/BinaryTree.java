@@ -1,4 +1,5 @@
 //HIDE
+import java.util.*;
 /**
    A binary tree in which each node has two children.
 */
@@ -112,5 +113,19 @@ public class BinaryTree
    
    public void replace(BinaryTree newTree) {
      this.root = newTree.root;  
+   }
+   
+   public void levelPrint()
+   {
+       Queue<Node> q = new LinkedList<>();
+       //q.add(this);
+       while (!q.isEmpty())
+       {
+           Node temp = q.remove();
+           System.out.print(temp.data + " ");
+           if (temp.left != null) q.add(temp.left);
+           if (temp.right != null) q.add(temp.right);
+       }    
+       System.out.println();
    }
 }

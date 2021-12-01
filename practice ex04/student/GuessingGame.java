@@ -86,13 +86,13 @@ public class GuessingGame
               if (left)
               {
                   newNode.addLeft(new BinaryTree(in.nextLine()));
-                  newNode.addRight(new BinaryTree(current.data()));     
+                  //newNode.addRight(new BinaryTree(current.data()));     
               } else {
-                 newNode.addRight(new BinaryTree(in.nextLine()));
+                 //newNode.addRight(new BinaryTree(in.nextLine()));
                  newNode.addLeft(new BinaryTree(current.data()));    
                }
               
-              current = getRoot();
+              current = questionTree;
           }
           else
             foundAnimal = "Y";
