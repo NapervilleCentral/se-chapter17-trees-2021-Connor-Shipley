@@ -1,3 +1,6 @@
+
+import java.util.*;
+
 /**
    A binary tree in which each node has two children.
 */
@@ -14,7 +17,7 @@ public class BinaryTree
       Constructs a tree with one node and no children.
       @param rootData the data for the root
    */
-   public BinaryTree(Object rootData)
+   public BinaryTree(Comparable rootData)
    {
       root = new Node();
       root.data = rootData;
@@ -28,7 +31,7 @@ public class BinaryTree
       @param left the left subtree
       @param right the right subtree
    */
-   public BinaryTree(Object rootData, BinaryTree left, BinaryTree right)
+   public BinaryTree(Comparable rootData, BinaryTree left, BinaryTree right)
    {
        root = new Node();
        root.data = rootData;
@@ -138,6 +141,28 @@ public class BinaryTree
        BinaryTree result = new BinaryTree();
        result.root = root.right;
        return result;
+   }
+   
+   /**
+    * inOrderTraversal - returns a list of items accumulated from the inOrderTraversal of a tree
+    * @return list
+    */
+   public List inOrderTraversal()
+   {
+       List list = new ArrayList();
+       inOrderTraverse(root,list);
+       
+       return list;
+   }
+   
+   public void inOrderTraverse(Node tree, List list)
+   {
+       if (tree != null)
+       {
+           inOrderTraverse(tree.left, list);
+           list.add(tree.data);
+           inOrderTraverse(tree.right, list);
+       }
    }
    
 }
