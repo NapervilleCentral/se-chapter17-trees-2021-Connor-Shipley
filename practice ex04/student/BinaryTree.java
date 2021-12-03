@@ -128,4 +128,26 @@ public class BinaryTree
        }    
        System.out.println();
    }
+   
+   public void swap(BinaryTree parent)
+   {
+       if (parent.right() != null && parent.left() != null)
+       {
+           BinaryTree right = parent.right();
+           BinaryTree left = parent.left();
+           parent.right().replace(left);
+           parent.left().replace(right);
+       }
+       else if (parent.right() == null) 
+       {
+           parent.right().replace(parent.left());
+           parent.left().replace(null);
+       }
+       else if (parent.left() == null) 
+       {
+           parent.left().replace(parent.right());
+           parent.right().replace(null);
+       }
+   }
+   
 }

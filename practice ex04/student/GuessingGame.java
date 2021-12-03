@@ -80,16 +80,19 @@ public class GuessingGame
           {
               System.out.println("What is a question that would have an answer of your animal?");
               BinaryTree newNode = new BinaryTree(in.nextLine());
+              BinaryTree otherAnswer = new BinaryTree(current.data());
               System.out.println("Is the answer to this question Y or N?");
               boolean left = in.nextLine().toUpperCase().equals("Y");
               System.out.println("What animal were you thinking of?");
               if (left)
               {
+                  current.replace(newNode);
                   newNode.addLeft(new BinaryTree(in.nextLine()));
-                  //newNode.addRight(new BinaryTree(current.data()));     
+                  newNode.addRight(otherAnswer);
               } else {
-                 newNode.addRight(new BinaryTree(in.nextLine()));
-                 //newNode.addLeft(new BinaryTree(current.data()));    
+                 current.replace(newNode);
+                 newNode.addRight(new BinaryTree(in.nextLine())); 
+                 newNode.addLeft(otherAnswer);
                }
               
               current = questionTree;
