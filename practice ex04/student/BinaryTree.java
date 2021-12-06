@@ -113,6 +113,7 @@ public class BinaryTree
    
    public void replace(BinaryTree newTree) {
      this.root = newTree.root;  
+     System.out.println(this.root.data);
    }
    
    public void levelPrint()
@@ -150,4 +151,13 @@ public class BinaryTree
        }
    }
    
+   public String toString(){
+     String output = "";
+     if (this.height() == 1) {
+          output+=this.data();
+        } else {
+          output+= this.data() + "->" + this.left() +"----"+this.right();
+        }
+        return output;
+    }
 }
